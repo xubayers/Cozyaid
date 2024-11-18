@@ -1,11 +1,20 @@
 import { useState } from "react";
+import { FaGoogle } from "react-icons/fa";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function SignIn() {
   const [isVisible, setIsVisible] = useState(false);
+  const { signWithGoogle } = useAuth();
   const passVisiblityHandler = () => {
     setIsVisible((prev) => !prev);
+  };
+
+  const googleSigninHandler = () => {
+    signWithGoogle().then((res) => {
+      console.log("res : ", res);
+    });
   };
   return (
     <>
@@ -17,6 +26,14 @@ export default function SignIn() {
         </div>
 
         <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
+          <div className="my-2">
+            <button
+              className=" mx-auto border px-4 py-2 rounded-md flex justify-center items-center gap-2 bg-myPrimary text-white"
+              onClick={googleSigninHandler}
+            >
+              Continue With <FaGoogle />
+            </button>
+          </div>
           <form className="space-y-6">
             <div>
               <label
@@ -85,10 +102,9 @@ export default function SignIn() {
           </form>
 
           <p className="mt-10 text-center text-sm/6 text-gray-500">
-            create a new account{" "}
-            <Link to={"signup"}>
-              {" "}
-              <span className="font-body text-blue-700">Sign_Up</span>{" "}
+            create a new account
+            <Link to={"/authlayout/signup"}>
+              <span className="font-body text-blue-700 ml-2">Sign_Up</span>
             </Link>
           </p>
         </div>

@@ -4,7 +4,8 @@ import Home from "../pages/home/Home";
 import DonationCampaigns from "../pages/campaign/DonationCampaigns";
 import Details from "../pages/details/Details";
 import AuthLayout from "../layouts/AuthLayout";
-import SignIn from "../firebase/login/Login";
+import SignIn from "../firebase/signin/SignIn";
+import SignUp from "../firebase/signup/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
           {
             path: "signin",
             element: <SignIn />,
+          },
+          {
+            path: "signup",
+            element: <SignUp />,
           },
         ],
       },
