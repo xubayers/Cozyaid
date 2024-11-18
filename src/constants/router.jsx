@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/home/Home";
 import DonationCampaigns from "../pages/campaign/DonationCampaigns";
 import Details from "../pages/details/Details";
+import AuthLayout from "../layouts/AuthLayout";
+import SignIn from "../firebase/login/Login";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,16 @@ const router = createBrowserRouter([
         path: "donationCampaigns",
         element: <DonationCampaigns />,
         loader: () => fetch("../campaigns.json"),
+      },
+      {
+        path: "authlayout",
+        element: <AuthLayout />,
+        children: [
+          {
+            path: "signin",
+            element: <SignIn />,
+          },
+        ],
       },
 
       // utiss

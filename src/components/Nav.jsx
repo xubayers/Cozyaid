@@ -48,7 +48,9 @@ function Nav() {
             </NavLink>
           </ul>
         </div>
-        <a className="btn btn-ghost font-bold text-xl">CozyAid</a>
+        <NavLink to={"/"} className="btn btn-ghost font-bold text-xl">
+          CozyAid
+        </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 *:px-3 gap-3 *:py-2 ">
@@ -106,9 +108,12 @@ function Nav() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn text-white hover:bg-mySecondery/90 bg-mySecondery">
+        <NavLink
+          to={"authlayout/signin"}
+          className="btn text-white hover:bg-mySecondery/90 bg-mySecondery"
+        >
           Login
-        </a>
+        </NavLink>
       </div>
     </div>
   );
