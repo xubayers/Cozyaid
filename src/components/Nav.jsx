@@ -113,12 +113,17 @@ function Nav() {
         {!user ? (
           <NavLink
             to={"authlayout/signin"}
-            className="btn text-white hover:bg-mySecondery/90 bg-mySecondery"
+            className="px-3 py-2  text-white hover:bg-mySecondery/90 bg-mySecondery rounded-sm"
           >
             Login
           </NavLink>
         ) : (
-          <NavLink className={" ring-4 rounded-full h-10 aspect-square "}>
+          <NavLink
+            to={"/dashboard"}
+            className={
+              " ring-4 ring-orange-600 rounded-full h-10 aspect-square "
+            }
+          >
             {/* <FaUserCircle /> */}
             <img
               src={user?.photoURL}

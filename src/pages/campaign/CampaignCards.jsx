@@ -12,16 +12,14 @@ function CampaignCards({ campaign = {} }) {
         className="w-full h-48 object-cover"
       />
       <div className="p-4">
-        <h2 className="text-xl font-semibold text-gray-800 mb-2 animate__animated animate__fadeInUp">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2 ">
           {campaign.title}
         </h2>
-        <p className="text-gray-600 text-sm mb-4 animate__animated animate__fadeInUp delay-100">
+        <p className="text-gray-600 text-sm mb-4 ">
           {campaign.description.slice(0, 90)}...
         </p>
         <p className="text-sm">
-          <span className="font-bold text-gray-700 animate__animated animate__fadeInUp delay-150">
-            Division:{" "}
-          </span>
+          <span className="font-bold text-gray-700 ">Division: </span>
           <span className="text-gray-800">{campaign.division}</span>
         </p>
         <div className="flex justify-center mt-4 ">

@@ -9,6 +9,8 @@ import SignUp from "../firebase/signup/SignUp";
 import PrivetRoute from "../privetRoutes/PrivetRoute";
 import AuthenteAccess from "../privetRoutes/AuthenteAccess";
 import ErrrPage from "../Err/ErrrPage";
+import Dashboard from "../pages/dashboard/Dashboard";
+import UpdateProfile from "../pages/dashboard/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
           },
         ],
       },
+      {
+        path: "dashboard",
+        element: (
+          <PrivetRoute>
+            <Dashboard />
+          </PrivetRoute>
+        ),
+      },
 
       // utiss
       {
@@ -53,6 +63,14 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: () => fetch("../campaigns.json"),
+      },
+      {
+        path: "update-profile",
+        element: (
+          <PrivetRoute>
+            <UpdateProfile />
+          </PrivetRoute>
+        ),
       },
     ],
   },
