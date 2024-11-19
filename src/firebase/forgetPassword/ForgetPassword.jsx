@@ -1,62 +1,4 @@
-import { useRef, useState } from "react";
-import { FaGoogle } from "react-icons/fa";
-import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
-import toast from "react-hot-toast";
-import { useEmail } from "../../hooks/useEmail";
-
-export default function SignIn() {
-  const [isVisible, setIsVisible] = useState(false);
-  const { signWithGoogle, singInEmailPass } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { setEmail } = useEmail();
-  const emailRef = useRef();
-
-  const passVisiblityHandler = () => {
-    setIsVisible((prev) => !prev);
-  };
-
-  const googleSigninHandler = () => {
-    signWithGoogle()
-      .then(() => {
-        toast.success("Sing in Successfully");
-        console.log(location.state);
-        if (location.state !== "/") {
-          navigate(location.state);
-        } else {
-          navigate("/");
-        }
-      })
-      .catch(() => toast.error("Sing in Failed!"));
-  };
-
-  const emailPasswordSignIn = (e) => {
-    e.preventDefault();
-    const target = e.target;
-
-    const email = target.email;
-    const password = target.password;
-    singInEmailPass(email, password)
-      .then(() => {
-        if (location.state !== "/") {
-          navigate(location.state);
-        } else {
-          navigate("/");
-        }
-      })
-      .catch((err) => {
-        toast.error("Sing in Failed!");
-        console.log(err);
-      });
-  };
-
-  // forget password handler
-  const forgetPasswordHandler = () => {
-    setEmail(emailRef.current.value);
-    navigate("/authlayout/forgetPassword");
-  };
+function ForgetPassword() {
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -155,3 +97,5 @@ export default function SignIn() {
     </>
   );
 }
+
+export default ForgetPassword;

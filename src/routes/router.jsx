@@ -11,6 +11,7 @@ import AuthenteAccess from "../privetRoutes/AuthenteAccess";
 import ErrrPage from "../Err/ErrrPage";
 import Dashboard from "../pages/dashboard/Dashboard";
 import UpdateProfile from "../pages/dashboard/UpdateProfile";
+import ForgetPassword from "../firebase/forgetPassword/ForgetPassword";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
           {
             path: "signup",
             element: <SignUp />,
+          },
+          {
+            path: "forgetPassword",
+            element: <ForgetPassword />,
           },
         ],
       },
