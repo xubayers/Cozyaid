@@ -3,21 +3,25 @@ import { NavLink } from "react-router-dom";
 /* eslint-disable react/prop-types */
 function CampaignCards({ campaign = {} }) {
   return (
-    <div className="max-w-sm mx-auto border border-gray-300 rounded-sm shadow-sm overflow-hidden">
+    <div
+      className={`max-w-sm mx-auto border border-gray-300 rounded-sm shadow-sm overflow-hidden  `}
+    >
       <img
         src={campaign.image}
         alt={campaign.title}
         className="w-full h-48 object-cover"
       />
       <div className="p-4">
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2 animate__animated animate__fadeInUp">
           {campaign.title}
         </h2>
-        <p className="text-gray-600 text-sm mb-4">
+        <p className="text-gray-600 text-sm mb-4 animate__animated animate__fadeInUp delay-100">
           {campaign.description.slice(0, 90)}...
         </p>
         <p className="text-sm">
-          <span className="font-bold text-gray-700">Division: </span>
+          <span className="font-bold text-gray-700 animate__animated animate__fadeInUp delay-150">
+            Division:{" "}
+          </span>
           <span className="text-gray-800">{campaign.division}</span>
         </p>
         <div className="flex justify-center mt-4 ">

@@ -5,6 +5,8 @@ import {
   onAuthStateChanged,
   signInWithPopup,
   GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { app } from "../../firebase/firebase.config";
 
@@ -15,8 +17,12 @@ const googleProvider = new GoogleAuthProvider();
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const unSubs = onAuthStateChanged(auth, (currUser) => {
+      console.log(currUser);
+      setIsLoading(false);
       if (currUser) {
         setUser(currUser);
       }
@@ -27,11 +33,26 @@ function AuthProvider({ children }) {
 
   // google signin
   const signWithGoogle = () => {
+    setIsLoading(true);
     return signInWithPopup(auth, googleProvider);
+  };
+
+  // email and passwird singin
+  const singInEmailPass = (email, pass) => {
+    return signInWithEmailAndPassword(auth, email, pass);
+  };
+
+  // (sing Up) / (crate new) user
+  const createNewUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const authMethods = {
     signWithGoogle,
+    user,
+    isLoading,
+    singInEmailPass,
+    createNewUser,
   };
   return (
     <AuthContext.Provider value={authMethods}>{children}</AuthContext.Provider>

@@ -1,15 +1,23 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import DonatesForm from "./DonatesForm";
+import { IoArrowBack } from "react-icons/io5";
 
 function Details() {
   const data = useLoaderData();
   const params = useParams();
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate(-1);
+  };
   const campaign = data.find(
     (campaignData) => campaignData.id === params.campaignId
   );
   return (
     <div className="container mx-auto px-2 mt-5 md:max-w-[800px] max-w-[600px]">
       <div>
+        <button className="text-2xl my-5" onClick={handleNavigate}>
+          <IoArrowBack />
+        </button>
         <h2 className="text-4xl  font-semibold text-gray-800 mb-2">
           {campaign.title}
         </h2>

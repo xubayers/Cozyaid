@@ -1,6 +1,7 @@
 [
   {
     "id": "d1f8a9c2",
+    "anim": 1,
     "title": "Warm Winter for Dhaka",
     "image": "https://i.ibb.co/WK60gcG/Screen-Shot-2022-03-22-at-14-08-05.webp",
     "description": "This campaign aims to distribute warm clothes to underprivileged communities in Dhaka. Many people in the city lack the resources to stay warm during winter. Join us in spreading warmth and comfort this season by donating clothes and funds.",
@@ -10,6 +11,7 @@
   },
   {
     "id": "a7b3k9q5",
+    "anim": 2,
     "title": "Chattogram Winter Drive",
     "image": "https://i.ibb.co/fxQXXrK/maxresdefault.jpg",
     "description": "We are organizing a winter clothes drive in Chattogram. This initiative focuses on helping those living in remote areas of the region who face harsh winters. Your donations can make a huge difference in their lives.",
@@ -19,6 +21,7 @@
   },
   {
     "id": "x9l2m4p6",
+    "anim": 3,
     "title": "Sylhet Warmth Campaign",
     "image": "https://i.ibb.co/6v92Sw0/Urgent-Support-Needed-for-Palestinian-Families-Act-Now-copy-100.jpg",
     "description": "The Sylhet Warmth Campaign is dedicated to helping tea garden workers and rural communities in the Sylhet region. Winter is a challenging time for many, and your support can provide much-needed warmth and comfort.",
@@ -28,6 +31,7 @@
   },
   {
     "id": "j5c8n7o3",
+    "anim": 4,
     "title": "Khulna Cold Relief",
     "image": "https://i.ibb.co/f0vXSGn/Save-Kids-From-The-Cold1303121969.jpg",
     "description": "Join the Khulna Cold Relief campaign to distribute warm clothing to underprivileged families. Our focus is on the rural areas where winters are particularly harsh. Your generosity can bring hope and warmth to many lives.",
@@ -37,6 +41,7 @@
   },
   {
     "id": "f3b9z2v1",
+    "anim": 5,
     "title": "Rajshahi Winter Care",
     "image": "https://i.ibb.co/thJx2M1/Winter-2.jpg",
     "description": "Rajshahi Winter Care is focused on distributing warm clothing and blankets to those in need. This campaign is particularly aimed at helping elderly people and children who are most vulnerable during the cold season.",
@@ -46,6 +51,7 @@
   },
   {
     "id": "p6n4q7m2",
+    "anim": 6,
     "title": "Barisal Warmth Drive",
     "image": "https://i.ibb.co/D5yD7gK/Urgent-Relief-general-without-text-1-100.jpg",
     "description": "Our Barisal Warmth Drive targets fishermen and their families who face extreme cold near the rivers. By donating warm clothes, you can help them stay safe and healthy during the chilly months.",
@@ -55,6 +61,7 @@
   },
   {
     "id": "q7x2v8l4",
+    "anim": 7,
     "title": "Mymensingh Winter Relief",
     "image": "https://i.ibb.co/VYXKXHN/images-2.jpg",
     "description": "Mymensingh Winter Relief is focused on providing warm clothing to rural communities struggling to cope with the cold weather. Together, we can ensure that no one is left to face the harsh winters without proper protection.",
@@ -64,6 +71,7 @@
   },
   {
     "id": "z4m9k3p7",
+    "anim": 8,
     "title": "Rangpur Blanket Drive",
     "image": "https://i.ibb.co/nbMtrnQ/nanhi-chhaya-foundation-tajpur-delhi-ngos-nbxne8r6t1.jpg",
     "description": "The Rangpur Blanket Drive aims to distribute blankets and winter essentials to families living in extreme poverty. Your contribution will directly impact lives, ensuring a warmer and safer winter for those in need.",
@@ -73,6 +81,7 @@
   },
   {
     "id": "t8q5b2n6",
+    "anim": 9,
     "title": "Comilla Winter Help",
     "image": "https://i.ibb.co/y8SQ09j/images-1.jpg",
     "description": "This campaign focuses on helping vulnerable communities in Comilla by providing them with winter essentials like jackets, sweaters, and blankets. Your support can bring warmth and smiles to those who need it most.",

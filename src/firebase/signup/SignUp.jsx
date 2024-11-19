@@ -1,12 +1,63 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+import { updateProfile, getAuth } from "firebase/auth";
+import { app } from "../firebase.config";
+import { FaGoogle } from "react-icons/fa";
+
+const auth = getAuth(app);
 
 export default function SignUp() {
   const [isVisible, setIsVisible] = useState(false);
+  const { createNewUser, signWithGoogle } = useAuth();
+  const navigate = useNavigate();
+  const [err, setErr] = useState("");
+
   const passVisiblityHandler = () => {
     setIsVisible((prev) => !prev);
   };
+
+  // sing up user with google
+
+  const googleSigninHandler = () => {
+    signWithGoogle()
+      .then(() => {
+        toast.success("Sing up Successfully");
+        navigate("/");
+      })
+      .catch(() => toast.error("Sing up Failed!"));
+  };
+  // create user
+  const createNewUserHandler = (e) => {
+    e.preventDefault();
+    const target = e.target;
+
+    const displayName = target.name.value;
+    // const
+    const email = target.email.value;
+    const password = target.password.value;
+
+    const validate = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+    if (!validate.test(password)) {
+      setErr(
+        "the password must be an upppercase a lowercase letter and minimum 6 character"
+      );
+      return;
+    } else {
+      setErr("");
+    }
+    createNewUser(email, password)
+      .then(() => {
+        return updateProfile(auth.currentUser, { displayName });
+      })
+      .catch((err) => {
+        toast.error("Sing Up Failed!");
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -17,7 +68,15 @@ export default function SignUp() {
         </div>
 
         <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6">
+          <div className="my-2">
+            <button
+              className=" mx-auto border px-4 py-2 rounded-md flex justify-center items-center gap-2 bg-myPrimary text-white"
+              onClick={googleSigninHandler}
+            >
+              Continue With <FaGoogle />
+            </button>
+          </div>
+          <form className="space-y-6" onSubmit={createNewUserHandler}>
             <div>
               <label
                 htmlFor="name"
@@ -100,6 +159,7 @@ export default function SignUp() {
                   {isVisible ? <IoMdEyeOff /> : <IoMdEye />}
                 </button>
               </div>
+              <p className="text-xs text-error my-2"> {err && err} </p>
             </div>
 
             <div>

@@ -6,11 +6,15 @@ import Details from "../pages/details/Details";
 import AuthLayout from "../layouts/AuthLayout";
 import SignIn from "../firebase/signin/SignIn";
 import SignUp from "../firebase/signup/SignUp";
+import PrivetRoute from "../privetRoutes/PrivetRoute";
+import AuthenteAccess from "../privetRoutes/AuthenteAccess";
+import ErrrPage from "../Err/ErrrPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrrPage />,
     children: [
       {
         path: "/",
@@ -23,7 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "authlayout",
-        element: <AuthLayout />,
+        element: (
+          <AuthenteAccess>
+            <AuthLayout />
+          </AuthenteAccess>
+        ),
         children: [
           {
             path: "signin",
@@ -39,7 +47,11 @@ const router = createBrowserRouter([
       // utiss
       {
         path: "/details/:campaignId",
-        element: <Details />,
+        element: (
+          <PrivetRoute>
+            <Details />
+          </PrivetRoute>
+        ),
         loader: () => fetch("../campaigns.json"),
       },
     ],

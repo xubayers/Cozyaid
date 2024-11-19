@@ -1,20 +1,52 @@
 import { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 export default function SignIn() {
   const [isVisible, setIsVisible] = useState(false);
-  const { signWithGoogle } = useAuth();
+  const { signWithGoogle, singInEmailPass } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const passVisiblityHandler = () => {
     setIsVisible((prev) => !prev);
   };
 
   const googleSigninHandler = () => {
-    signWithGoogle().then((res) => {
-      console.log("res : ", res);
-    });
+    signWithGoogle()
+      .then(() => {
+        toast.success("Sing in Successfully");
+        console.log(location.state);
+        if (location.state !== "/") {
+          navigate(location.state);
+        } else {
+          navigate("/");
+        }
+      })
+      .catch(() => toast.error("Sing in Failed!"));
+  };
+
+  const emailPasswordSignIn = (e) => {
+    e.preventDefault();
+    const target = e.target;
+
+    const email = target.email;
+    const password = target.password;
+    singInEmailPass(email, password)
+      .then(() => {
+        if (location.state !== "/") {
+          navigate(location.state);
+        } else {
+          navigate("/");
+        }
+      })
+      .catch((err) => {
+        toast.error("Sing in Failed!");
+        console.log(err);
+      });
   };
   return (
     <>
@@ -34,7 +66,7 @@ export default function SignIn() {
               Continue With <FaGoogle />
             </button>
           </div>
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={emailPasswordSignIn}>
             <div>
               <label
                 htmlFor="email"
@@ -83,6 +115,7 @@ export default function SignIn() {
                   className="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
                 />
                 <button
+                  type="button"
                   className="text-xl absolute top-3 right-3"
                   onClick={passVisiblityHandler}
                 >

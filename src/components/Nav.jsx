@@ -1,9 +1,11 @@
 import { RiMenu4Line } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 function Nav() {
+  const { user = {} } = useAuth();
   return (
-    <div className="navbar bg-base-100 container mx-auto">
+    <div className="navbar bg-base-100 container mx-auto animate__animated animate__fadeInDown">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -108,12 +110,23 @@ function Nav() {
         </ul>
       </div>
       <div className="navbar-end">
-        <NavLink
-          to={"authlayout/signin"}
-          className="btn text-white hover:bg-mySecondery/90 bg-mySecondery"
-        >
-          Login
-        </NavLink>
+        {!user ? (
+          <NavLink
+            to={"authlayout/signin"}
+            className="btn text-white hover:bg-mySecondery/90 bg-mySecondery"
+          >
+            Login
+          </NavLink>
+        ) : (
+          <NavLink className={" ring-4 rounded-full h-10 aspect-square "}>
+            {/* <FaUserCircle /> */}
+            <img
+              src={user?.photoURL}
+              className="h-full rounded-full w-full"
+              alt="Avtr "
+            />
+          </NavLink>
+        )}
       </div>
     </div>
   );
