@@ -9,6 +9,7 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
   signOut,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import { app } from "../../firebase/firebase.config";
 
@@ -58,6 +59,11 @@ function AuthProvider({ children }) {
   const signoutUser = () => {
     return signOut(auth);
   };
+
+  // reset password
+  const forgetPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
   const authMethods = {
     signWithGoogle,
     user,
@@ -67,6 +73,7 @@ function AuthProvider({ children }) {
     updateUserProfile,
     signoutUser,
     setUser,
+    forgetPassword,
   };
   return (
     <AuthContext.Provider value={authMethods}>{children}</AuthContext.Provider>

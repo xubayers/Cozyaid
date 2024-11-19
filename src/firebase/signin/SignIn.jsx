@@ -13,6 +13,7 @@ export default function SignIn() {
   const location = useLocation();
   const { setEmail } = useEmail();
   const emailRef = useRef();
+  const [err, setErr] = useState("");
 
   const passVisiblityHandler = () => {
     setIsVisible((prev) => !prev);
@@ -54,8 +55,13 @@ export default function SignIn() {
 
   // forget password handler
   const forgetPasswordHandler = () => {
-    setEmail(emailRef.current.value);
-    navigate("/authlayout/forgetPassword");
+    const email = emailRef.current.value;
+    if (email) {
+      setEmail(email);
+      navigate("/authlayout/forgetPassword");
+    } else {
+      setErr("Plase enter a email!");
+    }
   };
   return (
     <>
@@ -95,6 +101,7 @@ export default function SignIn() {
                   className="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
                 />
               </div>
+              <p className="text-xs text-error mt-1"> {err && err} </p>
             </div>
 
             <div>
