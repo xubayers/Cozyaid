@@ -6,7 +6,7 @@ import ThemeControler from "./theme/ThemeControler";
 function Nav() {
   const { user = {} } = useAuth();
   return (
-    <div className="bg-gray-100/60">
+    <div className="bg-gray-100/60 dark:bg-black/20 dark:text-gray-400">
       <div className="navbar  container mx-auto animate__animated animate__fadeInDown  mb-2">
         <div className="navbar-start">
           <PhoneDropdown />

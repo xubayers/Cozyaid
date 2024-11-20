@@ -42,20 +42,22 @@ function WhatPeoapleSay() {
   };
 
   return (
-    <section className="bg-white py-12">
+    <section className=" py-12">
       <div className="max-w-7xl mx-auto px-6 sm:px-12">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8 lg:w-5/12 md:w-9/12 mx-auto">
+        <h2 className="md:text-4xl text-2xl font-bold text-center text-gray-800 dark:text-gray-400 mb-8 lg:w-5/12 md:w-9/12 mx-auto">
           What People Say About <span className="text-myPrimary">CozyAid</span>
         </h2>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
           {feedbacks?.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-6  shadow-md rounded-sm flex flex-col items-center text-center"
+              className="bg-gray-50 dark:bg-black/20 p-6  shadow-md rounded-sm flex flex-col items-center text-center"
             >
               <FaQuoteLeft className="text-blue-500 text-3xl mb-4" />
-              <p className="text-gray-600 mb-4">{testimonial.text}</p>
-              <h4 className="text-gray-800 font-semibold">
+              <p className="text-gray-600 dark:text-gray-500 mb-4">
+                {testimonial.text}
+              </p>
+              <h4 className="text-gray-800 dark:text-gray-400 font-semibold">
                 {testimonial.name}
               </h4>
             </div>

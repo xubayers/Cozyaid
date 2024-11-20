@@ -5,8 +5,8 @@ function AuthenteAccess({ children }) {
   const { user } = useAuth();
   const location = useLocation();
 
-  if (user) {
-    // return <Navigate to="/" />;
+  if (user && !location.state) {
+    return <Navigate to="/" />;
   }
 
   // If the user is not logged in, allow access to the auth pages

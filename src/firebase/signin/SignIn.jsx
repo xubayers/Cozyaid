@@ -13,6 +13,7 @@ export default function SignIn() {
   const location = useLocation();
   const { setEmail } = useEmail();
   const emailRef = useRef();
+  const [err, setErr] = useState("");
 
   const passVisiblityHandler = () => {
     setIsVisible((prev) => !prev);
@@ -29,6 +30,7 @@ export default function SignIn() {
 
   const emailPasswordSignIn = (e) => {
     e.preventDefault();
+    setErr("");
     const target = e.target;
 
     const email = target.email.value;
@@ -41,6 +43,9 @@ export default function SignIn() {
       })
       .catch(() => {
         toast.error("Sing in Failed!");
+        setErr(
+          "There was an error please make sure your input is currect and try again!"
+        );
       });
   };
 
@@ -52,9 +57,9 @@ export default function SignIn() {
   };
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 ">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className=" text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+          <h2 className=" text-center text-2xl/9 font-bold tracking-tight text-gray-900 dark:text-gray-400">
             Sign in to your account
           </h2>
         </div>
@@ -72,7 +77,7 @@ export default function SignIn() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-gray-900 dark:text-gray-400"
               >
                 Email address
               </label>
@@ -94,7 +99,7 @@ export default function SignIn() {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm/6 font-medium text-gray-900"
+                  className="block text-sm/6 font-medium text-gray-900 dark:text-gray-400"
                 >
                   Password
                 </label>
@@ -115,7 +120,7 @@ export default function SignIn() {
                   placeholder="password"
                   required
                   autoComplete="current-password"
-                  className="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6 "
                 />
                 <button
                   type="button"
@@ -125,6 +130,7 @@ export default function SignIn() {
                   {isVisible ? <IoMdEyeOff /> : <IoMdEye />}
                 </button>
               </div>
+              <p className="text-error my-2 text-xs"> {err && err} </p>
             </div>
 
             <div>

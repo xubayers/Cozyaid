@@ -10,7 +10,7 @@ function DonatesForm() {
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 className=" text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+        <h2 className=" text-center text-2xl/9 font-bold tracking-tight text-gray-900 dark:text-gray-400">
           Donate Here
         </h2>
       </div>
@@ -20,7 +20,7 @@ function DonatesForm() {
           <div>
             <label
               htmlFor="itemQuantity"
-              className="block text-sm/6 font-medium text-gray-900"
+              className="block text-sm/6 font-medium text-gray-900 dark:text-gray-400"
             >
               Item Quantity
             </label>
@@ -40,7 +40,7 @@ function DonatesForm() {
             <div className="flex items-center justify-between">
               <label
                 htmlFor="itemType"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-gray-900 dark:text-gray-400"
               >
                 Item Type
               </label>
@@ -55,7 +55,7 @@ function DonatesForm() {
             <div className="flex items-center justify-between">
               <label
                 htmlFor="pickupAddress"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-gray-900 dark:text-gray-400"
               >
                 PickUp Address
               </label>

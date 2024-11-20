@@ -7,7 +7,7 @@ import WhatPeoapleSay from "./WhatPeopleSay";
 
 function Home() {
   return (
-    <div className="container mx-auto  px-2">
+    <div className="container mx-auto  px-2 dark:text-gray-400">
       {/* title for this page */}
       <Helmet>
         <title>CozyAid | Winter Warmth Drive</title>

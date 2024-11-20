@@ -31,7 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: "howToHelp",
-        element: <HowToHelp />,
+        element: (
+          <PrivetRoute>
+            <HowToHelp />
+          </PrivetRoute>
+        ),
       },
 
       {

@@ -32,6 +32,7 @@ export default function SignUp() {
   // create user
   const createNewUserHandler = (e) => {
     e.preventDefault();
+    setErr("");
     const target = e.target;
 
     const displayName = target.name.value;
@@ -50,11 +51,13 @@ export default function SignUp() {
     }
     createNewUser(email, password)
       .then(() => {
-        return updateProfile(auth.currentUser, { displayName });
+        return updateProfile(auth.currentUser, { displayName }).then(() => {
+          navigate("/");
+          toast.success("Sing in Successfully");
+        });
       })
-      .catch((err) => {
+      .catch(() => {
         toast.error("Sing Up Failed!");
-        console.log(err);
       });
   };
 
@@ -62,7 +65,7 @@ export default function SignUp() {
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className=" text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+          <h2 className=" text-center text-2xl/9 font-bold tracking-tight text-gray-900 dark:text-gray-400">
             Create New Account
           </h2>
         </div>
@@ -80,7 +83,7 @@ export default function SignUp() {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-gray-900 dark:text-gray-400"
               >
                 FullName
               </label>
@@ -98,7 +101,7 @@ export default function SignUp() {
             <div>
               <label
                 htmlFor="url"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-gray-900 dark:text-gray-400"
               >
                 Photo URL
               </label>
@@ -116,7 +119,7 @@ export default function SignUp() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-gray-900 dark:text-gray-400"
               >
                 Email address
               </label>
@@ -137,7 +140,7 @@ export default function SignUp() {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm/6 font-medium text-gray-900"
+                  className="block text-sm/6 font-medium text-gray-900 dark:text-gray-400"
                 >
                   Password
                 </label>
@@ -153,6 +156,7 @@ export default function SignUp() {
                   className="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
                 />
                 <button
+                  type="button"
                   className="text-xl absolute top-3 right-3"
                   onClick={passVisiblityHandler}
                 >

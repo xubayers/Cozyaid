@@ -41,7 +41,7 @@ const HowItWorks = () => {
     <section className="py-12 mt-8 bg-myPrimary/5 rounded-md">
       <div className="max-w-7xl mx-auto px-6 sm:px-12">
         {/* Title */}
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
+        <h2 className="md:text-4xl text-2xl font-bold text-center text-gray-800 dark:text-gray-400  mb-8">
           <span className="text-myPrimary">How It</span> Works
         </h2>
 
@@ -50,27 +50,29 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <div key={index} className="text-center">
               <div className="flex justify-center">{step.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">
+              <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-500 mb-2">
                 {step.title}
               </h3>
-              <p className="text-gray-600">{step.description}</p>
+              <p className="text-gray-600 dark:text-gray-500">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Supported Divisions */}
         <div className="mt-12 text-center">
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">
+          <h3 className="md:text-2xl text-xl font-bold text-gray-800 dark:text-gray-400 mb-4">
             Supported Divisions
           </h3>
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 dark:text-gray-500 mb-4">
             Your donations reach people in these divisions:
           </p>
           <ul className="flex flex-wrap justify-center gap-4 text-gray-700">
             {divisions.map((division, index) => (
               <li
                 key={index}
-                className="bg-mySecondery/15 px-4 py-2 rounded-md shadow-sm"
+                className="bg-mySecondery/15 dark:text-gray-400 px-4 py-2 rounded-md shadow-sm"
               >
                 {division}
               </li>

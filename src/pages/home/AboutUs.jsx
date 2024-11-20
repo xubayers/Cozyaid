@@ -7,7 +7,7 @@ function AboutUs() {
           className="sm:max-w-sm rounded-lg lg:h-96 md:h-60 object-right object-cover shadow-sm"
         />
         <div>
-          <h1 className="md:text-4xl text-2xl font-bold">
+          <h1 className="md:text-4xl text-2xl font-bold md:mt-0 mt-3">
             About <span className="text-myPrimary"> CozyAit</span>
           </h1>
           <p className="py-6">
