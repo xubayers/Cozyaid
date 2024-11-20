@@ -45,9 +45,10 @@ CozyAid requires [Node.js](https://nodejs.org/) v10+ to run.
 Follow these instructions to set up the project:
 
 1. **Create the Project:**
-   ```sh
-   npm create vite@latest cozyaid -- --template react
-   ```
+
+```sh
+npm create vite@latest cozyaid -- --template react
+```
 
 ```sh
 cd cozyaid
@@ -60,4 +61,5 @@ npm run dev
 ### Live links
 
 **Firebase**: https://cozyaid-15624.web.app/
+</br>
 **Surge**: https://cozyaid-15624.surge.sh
