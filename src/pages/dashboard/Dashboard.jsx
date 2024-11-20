@@ -1,6 +1,7 @@
 import { CiEdit } from "react-icons/ci";
 import { useAuth } from "../../hooks/useAuth";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function Dashboard() {
   const { user, setUser, signoutUser } = useAuth();
@@ -11,6 +12,10 @@ function Dashboard() {
   };
   return (
     <div className="container mx-auto px-2 mt-7">
+      {/* title for this page */}
+      <Helmet>
+        <title>Dashboard | Winter Warmth Drive</title>
+      </Helmet>
       <h1 className="text-3xl ">
         Welcome &nbsp;
         <span className="font-semibold text-myPrimary">

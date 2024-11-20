@@ -124,7 +124,6 @@ function Nav() {
               " ring-4 ring-orange-600 rounded-full h-10 aspect-square "
             }
           >
-            {/* <FaUserCircle /> */}
             <img
               src={user?.photoURL}
               className="h-full rounded-full w-full"

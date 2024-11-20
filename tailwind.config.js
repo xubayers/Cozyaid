@@ -12,5 +12,8 @@ export default withMT({
       },
     },
   },
+  daisyui: {
+    themes: ["winter", "sunset"],
+  },
   plugins: [daisyui],
 });
