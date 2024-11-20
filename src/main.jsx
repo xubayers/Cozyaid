@@ -6,13 +6,16 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./routes/router";
 import { AuthProvider } from "./contexts/authContext/AuthContext";
 import { EmailProvider } from "./contexts/EmailContext";
+import { ThemeProvider } from "./contexts/themeContext/ThemeContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <EmailProvider>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
-    </EmailProvider>
+    <ThemeProvider>
+      <EmailProvider>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </EmailProvider>
+    </ThemeProvider>
   </StrictMode>
 );

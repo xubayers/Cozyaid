@@ -12,6 +12,7 @@ import ErrrPage from "../Err/ErrrPage";
 import Dashboard from "../pages/dashboard/Dashboard";
 import UpdateProfile from "../pages/dashboard/UpdateProfile";
 import ForgetPassword from "../firebase/forgetPassword/ForgetPassword";
+import HowToHelp from "../pages/howToHelp/HowToHelp";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
         element: <DonationCampaigns />,
         loader: () => fetch("../campaigns.json"),
       },
+      {
+        path: "howToHelp",
+        element: <HowToHelp />,
+      },
+
       {
         path: "authlayout",
         element: (

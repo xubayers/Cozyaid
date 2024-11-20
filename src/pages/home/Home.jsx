@@ -1,5 +1,9 @@
 import { Helmet } from "react-helmet";
-import Banner from "../../components/Banner";
+import Banner from "./Banner";
+import AboutUs from "./AboutUs";
+import HowItWorks from "./HowItWorks";
+import MakeADefferent from "./MakeADefferent";
+import WhatPeoapleSay from "./WhatPeopleSay";
 
 function Home() {
   return (
@@ -8,7 +12,12 @@ function Home() {
       <Helmet>
         <title>CozyAid | Winter Warmth Drive</title>
       </Helmet>
+      {/* All sections */}
       <Banner />
+      <AboutUs />
+      <HowItWorks />
+      <WhatPeoapleSay />
+      <MakeADefferent />
     </div>
   );
 }

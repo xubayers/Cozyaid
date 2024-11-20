@@ -4,12 +4,12 @@ The Winter Donation single-page application (SPA) is a simple and user-friendly 
 
 ## Features
 
-- **Smooth & Attractive Animations**
-  - Includes banner animations and slider features.
 - **Donation Campaign Cards**
   - Users can explore various donation campaigns and contribute easily.
 - **Responsive Design**
   - Optimized for all devices, ensuring a seamless user experience.
+- **Smooth & Attractive Animations**
+  - Includes banner animations and slider features.
 - **Dynamic Page Titles**
   - Each page has a descriptive and dynamic title.
 - **Donation Features**

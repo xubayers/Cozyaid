@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 
 function MainLayout() {
   return (
-    <>
+    <div className="dark:bg-sunset">
       <Nav />
       {/* dinamic routes here */}
       <div className="min-h-[313px]">
@@ -14,7 +14,7 @@ function MainLayout() {
       <Footer />
       {/* react hot toast component */}
       <Toaster position="top-right" />
-    </>
+    </div>
   );
 }
 

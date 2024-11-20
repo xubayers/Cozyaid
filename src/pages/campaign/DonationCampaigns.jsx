@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
-import CampaignCards from "./campaignCards";
 import PageHeader from "../../components/pageHeader/PageHeader";
 import { Helmet } from "react-helmet";
+import CampaignCards from "./CampaignCards";
 
 function DonationCampaigns() {
   const data = useLoaderData();
