@@ -16,6 +16,7 @@ function PrivetRoute({ children }) {
   if (user) {
     return children;
   }
+
   return <Navigate to={"/authlayout/signin"} state={location.pathname} />;
 }
 

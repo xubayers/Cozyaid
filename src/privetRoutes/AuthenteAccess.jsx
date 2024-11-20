@@ -1,13 +1,15 @@
-/* eslint-disable react/prop-types */
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 function AuthenteAccess({ children }) {
   const { user } = useAuth();
+  const location = useLocation();
 
   if (user) {
-    return <Navigate to={"/"} />;
+    // return <Navigate to="/" />;
   }
+
+  // If the user is not logged in, allow access to the auth pages
   return children;
 }
 

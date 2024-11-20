@@ -22,12 +22,7 @@ export default function SignIn() {
     signWithGoogle()
       .then(() => {
         toast.success("Sing in Successfully");
-        console.log(location.state);
-        if (location.state !== "/") {
-          navigate(location.state);
-        } else {
-          navigate("/");
-        }
+        navigate(location?.state ? location.state : "/", { replace: true });
       })
       .catch(() => toast.error("Sing in Failed!"));
   };
@@ -36,19 +31,16 @@ export default function SignIn() {
     e.preventDefault();
     const target = e.target;
 
-    const email = target.email;
-    const password = target.password;
+    const email = target.email.value;
+    const password = target.password.value;
     singInEmailPass(email, password)
       .then(() => {
-        if (location.state !== "/") {
-          navigate(location.state);
-        } else {
-          navigate("/");
-        }
+        toast.success("Sing in Successfully");
+        console.log(location.state);
+        navigate(location?.state ? location.state : "/", { replace: true });
       })
-      .catch((err) => {
+      .catch(() => {
         toast.error("Sing in Failed!");
-        console.log(err);
       });
   };
 
@@ -145,12 +137,12 @@ export default function SignIn() {
             </div>
           </form>
 
-          <a className="mt-10 text-center text-sm/6 text-gray-500">
+          <p className="mt-10 text-center text-sm/6 text-gray-500">
             create a new account
             <Link to={"/authlayout/signup"}>
               <span className="font-body text-blue-700 ml-2">Sign_Up</span>
             </Link>
-          </a>
+          </p>
         </div>
       </div>
     </>

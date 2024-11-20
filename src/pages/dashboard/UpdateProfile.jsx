@@ -14,15 +14,10 @@ function UpdateProfile() {
       ? target.photoUrl.value
       : user?.photoURL;
 
-    updateUserProfile(fullname, photoUrl)
-      .then(() => {
-        console.log("success");
-        navigate(-1);
-        toast.success("Profile updated");
-      })
-      .catch(() => {
-        console.log("err");
-      });
+    updateUserProfile(fullname, photoUrl).then(() => {
+      navigate(-1);
+      toast.success("Profile updated");
+    });
   };
   return (
     <div className="container mx-auto px-2">

@@ -83,7 +83,7 @@ function Nav() {
             <NavLink
               to={"/dashboard"}
               className={
-                " ring-4 ring-orange-600 rounded-full h-10 aspect-square "
+                " ring-4 ring-orange-600 rounded-full h-8 aspect-square "
               }
             >
               <img

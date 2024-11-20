@@ -45,9 +45,9 @@ function Banner() {
         ))}
       </Carousel>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white z-30">
-        <h1 className="animate__animated animate__fadeInUp text-center text-6xl font-semibold text-white/90 my-4">
+        <h1 className="animate__animated animate__fadeInUp text-center lg:text-6xl md:text-5xl text-4xl  font-semibold text-white/90 my-4">
           Winter{" "}
-          <span className="text-myPrimary relative before:contents-[''] before:h-1 before:w-10 before:bg-myPrimary before:absolute before:-bottom-2 before:left-0">
+          <span className="text-myPrimary relative before:contents-[''] before:h-1 before:w-10 before:bg-myPrimary before:absolute before:bottom-0 before:left-0">
             Warmth
           </span>{" "}
           Drive

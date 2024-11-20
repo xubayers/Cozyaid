@@ -1,7 +1,6 @@
 import { useTheme } from "../../hooks/useTheme";
 
 function ThemeControler() {
-  console.log(useTheme());
   const { themeState, setThemeState } = useTheme();
 
   const themeHandler = () => {

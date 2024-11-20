@@ -18,7 +18,7 @@ function Details() {
         <button className="text-2xl my-5" onClick={handleNavigate}>
           <IoArrowBack />
         </button>
-        <h2 className="text-4xl  font-semibold text-gray-800 mb-2">
+        <h2 className="md:text-4xl text-2xl font-semibold text-gray-800 mb-2">
           {campaign.title}
         </h2>
         <p className="text-gray-600 text-sm mb-4">{campaign.description}</p>
