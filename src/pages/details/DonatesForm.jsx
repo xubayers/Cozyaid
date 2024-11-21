@@ -8,7 +8,7 @@ function DonatesForm() {
     e.target.reset();
   };
   return (
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-6 lg:px-8">
+    <div className="flex min-h-full  flex-1 flex-col justify-center px-6 py-6 lg:px-8 ">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className=" text-center text-2xl/9 font-bold tracking-tight text-gray-900 dark:text-gray-400">
           Donate Here
